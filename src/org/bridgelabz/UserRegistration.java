@@ -4,19 +4,29 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
     Scanner sc=new Scanner(System.in);
-
     public void checkFirstName(){
         System.out.println("Enter first name: ");
         String firstName=sc.next();
         if(Pattern.matches("^[A-Z]{1}[a-z]{3,}",firstName)){
             System.out.println("First name is valid...");
         }else {
-            System.out.println("First name is invalid-!!");
+            System.out.println("*** First name is invalid-***");
+        }
+    }
+    public void checkLastName(){
+        System.out.println("---------------");
+        System.out.println("Enter Last name:--");
+        String lastName=sc.next();
+        if(Pattern.matches("^[A-Z]{1}[a-z]{3,}",lastName)){
+            System.out.println("Last name is valid....." );
+    }else{
+            System.out.println("****last name is Invalid..****");
         }
     }
     public static void main(String[] args) {
         System.out.println("Welcome to user registration program");
         UserRegistration validate= new UserRegistration();
         validate.checkFirstName();
+        validate.checkLastName();
     }
 }
