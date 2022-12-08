@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 public class UserRegistration {
     Scanner sc=new Scanner(System.in);
     public void checkFirstName(){
-        System.out.println("Enter first name: ");
+        System.out.print("Enter first name: ");
         String firstName=sc.next();
         if(Pattern.matches("^[A-Z]{1}[a-z]{3,}",firstName)){
             System.out.println("First name is valid...");
@@ -15,7 +15,7 @@ public class UserRegistration {
     }
     public void checkLastName(){
         System.out.println("---------------");
-        System.out.println("Enter Last name:--");
+        System.out.print("Enter Last name:--");
         String lastName=sc.next();
         if(Pattern.matches("^[A-Z]{1}[a-z]{3,}",lastName)){
             System.out.println("Last name is valid....." );
@@ -23,10 +23,21 @@ public class UserRegistration {
             System.out.println("****last name is Invalid..****");
         }
     }
+    public void checkEmail() {
+        System.out.println("-----------------");
+        System.out.print("Enter Email ID:-- ");
+        String email = sc.next();
+        if (Pattern.matches("^[a-zA-Z]{3,}[.]?[A-za-z0-9]{3,}[.]?[a-zA-Z]+[@]{1}[a-z]+[.]?[a-z]*", email)) {
+            System.out.println("Email is Valid---!!");
+        } else {
+            System.out.println("Email is Invalid--!!");
+        }
+    }
     public static void main(String[] args) {
         System.out.println("Welcome to user registration program");
         UserRegistration validate= new UserRegistration();
         validate.checkFirstName();
         validate.checkLastName();
+        validate.checkEmail();
     }
 }
