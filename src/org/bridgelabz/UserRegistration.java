@@ -41,14 +41,27 @@ public class UserRegistration {
             System.out.println("PhoneNumber is Valid-----");
         } else {
             System.out.println("*** PhoneNumber is Invalid. ***");
+
          }
+    }
+    public void checkPasswordRule1() {
+        System.out.println("-------------------");
+        System.out.println("Enter Password :-  ");
+        String password  = sc.nextLine();
+        if (Pattern.matches("^[a-zA-z]{8,}",password)) {
+            System.out.println("Password is Valid---!!");
+        } else {
+            System.out.println("**** Password is Invalid--****");
+            checkPasswordRule1();
+        }
     }
     public static void main(String[] args) {
         System.out.println("Welcome to user registration program");
         UserRegistration validate= new UserRegistration();
 //        validate.checkFirstName();
 //        validate.checkLastName();
-//        validate.checkEmail();
-        validate.checkPhoneNumber();
+ //      validate.checkEmail();
+          validate.checkPhoneNumber();
+          validate.checkPasswordRule1();
     }
 }
