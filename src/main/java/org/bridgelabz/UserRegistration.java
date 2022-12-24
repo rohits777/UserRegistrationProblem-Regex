@@ -1,4 +1,4 @@
-package org.bridgelabz;
+package main.java.org.bridgelabz;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -55,13 +55,25 @@ public class UserRegistration {
             checkPasswordRule1();
         }
     }
+    public void checkPasswordRule2() {
+        System.out.println("-------------------");
+        System.out.println("Enter Password :-  ");
+        String password  = sc.nextLine();
+        if (Pattern.matches("^[A-z]+[A-Za-z]{8,}",password)) {
+            System.out.println("Password is Valid---!!");
+        } else {
+            System.out.println("**** Password is Invalid--****");
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Welcome to user registration program");
         UserRegistration validate= new UserRegistration();
-//        validate.checkFirstName();
-//        validate.checkLastName();
- //      validate.checkEmail();
-          validate.checkPhoneNumber();
-          validate.checkPasswordRule1();
+  //         validate.checkFirstName();
+ //          validate.checkLastName();
+ //          validate.checkEmail();
+ //          validate.checkPhoneNumber();
+ //          validate.checkPasswordRule1();
+             validate.checkPasswordRule2();
     }
 }
