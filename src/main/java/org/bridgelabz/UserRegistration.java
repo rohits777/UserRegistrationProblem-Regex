@@ -27,7 +27,7 @@ public class UserRegistration {
         System.out.println("----------------------------");
         System.out.print("Enter Email ID:-- ");
         String email = sc.next();
-        if (Pattern.matches("^[a-zA-Z]{3,}[.]?[A-za-z0-9]{3,}[.]?[a-zA-Z]+[@]{1}[a-z]+[.]?[a-z]*", email)) {
+        if (Pattern.matches("^[a-zA-Z]{3,}[+-.]?[A-za-z0-9]*[@]{1}[a-z]+[.]?[a-z]*[.]?[a-z]", email)){
             System.out.println("Email is Valid---!!");
         } else {
             System.out.println("*** Email is Invalid -***");
@@ -93,12 +93,12 @@ public class UserRegistration {
         UserRegistration validate= new UserRegistration();
   //         validate.checkFirstName();
  //          validate.checkLastName();
- //          validate.checkEmail();
+            validate.checkEmail();
  //          validate.checkPhoneNumber();
  //          validate.checkPasswordRule1();
          //    validate.checkPasswordRule2();
         //  validate.checkPasswordRule3();
-        validate.checkPasswordRule4();
+      //  validate.checkPasswordRule4();
 
     }
 }
