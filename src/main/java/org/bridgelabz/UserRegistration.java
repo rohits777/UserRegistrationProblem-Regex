@@ -76,6 +76,17 @@ public class UserRegistration {
             checkPasswordRule1();
         }
     }
+    public void checkPasswordRule4() {
+        System.out.println("-----------------");
+        System.out.println("Enter Password : ");
+        String password  = sc.nextLine();
+        if (Pattern.matches("^[A-Z]+[A-Za-z0-9]{7,}[!@#$%^&*()=]+",password)) {
+            System.out.println("Password is Valid---!!");
+        } else {
+            System.out.println("Password is Invalid--!!");
+            checkPasswordRule4();
+        }
+    }
 
     public static void main(String[] args) {
         System.out.println("Welcome to user registration program");
@@ -86,6 +97,8 @@ public class UserRegistration {
  //          validate.checkPhoneNumber();
  //          validate.checkPasswordRule1();
          //    validate.checkPasswordRule2();
-             validate.checkPasswordRule3();
+        //  validate.checkPasswordRule3();
+        validate.checkPasswordRule4();
+
     }
 }
